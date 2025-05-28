@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bookstore Inventory</title>
+</head>
+<body>
+  <h1>Bookstore Inventory</h1>
+  <ul id="bookList"></ul>
+
+  <script>
+    // Load JSON data from external file
+    fetch('books.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json(); // Parse JSON response
+      })
+      .then(data => {
+        const bookList = document.getElementById("bookList");
+
+        // Loop through each book and add it to the page
+        data.books.forEach(book => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <strong>${book.title}</strong><br>
+            Author: ${book.author.firstName} ${book.author.lastName}<br>
+            Publication Year: ${book.publicationYear}<br>
+            Publisher: ${book.details.publisher}<br>
+            Page Count: ${book.details.pageCount}<br>
+            Available: ${book.details.available ? "Yes" : "No"}
+          `;
+          bookList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching the JSON:', error);
+      });
+  </script>
+</body>
+</html>

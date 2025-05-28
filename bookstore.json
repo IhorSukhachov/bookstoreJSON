@@ -1,0 +1,35 @@
+{
+    "books": [
+      {
+        "title": "Tyhrovy Hunters",
+        "author": { "firstName": "Ivan", "lastName": "Bahrianyi" },
+        "publicationYear": 1944,
+        "details": {
+          "publisher": "Literaturna Ukraina",
+          "pageCount": 304,
+          "available": true
+        }
+      },
+      {
+        "title": "Kaidashev Family",
+        "author": { "firstName": "Ivan", "lastName": "Nechui-Levytskyi" },
+        "publicationYear": 1879,
+        "details": {
+          "publisher": "Osnovy",
+          "pageCount": 240,
+          "available": true
+        }
+      },
+      {
+        "title": "The Forest Song",
+        "author": { "firstName": "Lesya", "lastName": "Ukrainka" },
+        "publicationYear": 1911,
+        "details": {
+          "publisher": "Dnipro",
+          "pageCount": 180,
+          "available": false
+        }
+      }
+    ]
+  }
+  
